@@ -104,11 +104,13 @@ function App() {
     setBoardData(cloneBoardData);
   }
 
+  if (window.innerWidth > 400) return (<div>This app now support for smart phone only</div>)
+
   return (
     <div className="App flex flex-col items-center gap-4 h-full">
       <img src={woodBackgroundImg} alt={''} className={'h-[100vh] fixed top-0 left-0 z-[-1]'}/>
       <div className='w-full'>
-        <div className={'bg-gray-700 text-slate-300 w-full h-full p-1'}>Color Remember Game</div>
+        <div className={'bg-gray-700 text-slate-300 w-full h-full p-1'}>Color Remember Game (beta 0.1)</div>
         <div className='flex w-full gap-[2px] bg-gray-600'>  
           <PlayerProfile name={'Player 1'} marks={marks[1]} colorToGo={isPlayer1 ? colorToGo : undefined}/>
           <PlayerProfile name={'Player 2'} marks={marks[2]} colorToGo={isPlayer1 ? undefined : colorToGo}/>
